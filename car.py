@@ -1,5 +1,3 @@
-import json
-
 from broker import sagas_service_setup, start_consuming
 
 

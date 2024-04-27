@@ -1,5 +1,3 @@
-import json
-
 from broker import sagas_service_setup, start_consuming
 
 
@@ -12,7 +10,7 @@ def on_message(action, data):
         print('executing', data)
     else:
         print('reverting', data)
-        
+
     return 'ok'
 
 
