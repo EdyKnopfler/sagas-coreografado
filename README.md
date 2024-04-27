@@ -7,6 +7,12 @@ Executando o broker:
 ```bash
 docker compose up
 ```
+
+Dependências:
+
+```bash
+pip install pika
+```
  
 Serviços (um por terminal):
 * `python fly.py`
