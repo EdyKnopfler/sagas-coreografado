@@ -10,7 +10,8 @@ def on_message(action, data):
     if action == 'proceed':
         print('executing', data)
     else:
-        print('reverting', data)
+        #print('reverting', data)
+        raise Exception('erro ao reverter')
         
     return 'ok'
 
