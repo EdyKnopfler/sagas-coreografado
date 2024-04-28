@@ -68,8 +68,8 @@ def start_consuming(queue_this, callback, queue_prev=None, queue_next=None):
                 })
 
 
-        def _handle_error(failed_message):
-            print('Handling error', e)
+        def _handle_error(error, failed_message):
+            print('Handling error', error)
             ch.basic_reject(delivery_tag=method.delivery_tag, requeue=False)
 
             if queue_prev:
@@ -86,7 +86,7 @@ def start_consuming(queue_this, callback, queue_prev=None, queue_next=None):
             result = callback(action, data)
             _handle_success(action, result)
         except Exception as e:
-            _handle_error(data)
+            _handle_error(e, data)
             
     
     channel.basic_consume(
